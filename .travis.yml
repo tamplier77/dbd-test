@@ -1,14 +1,16 @@
-  sudo: required
-  language: python
-  python:
-    - 3.5
-  services: docker
-  before_install:
-    - git clone https://github.com/tamplier77/dbd-test
-    - cd dbd-test
-    - docker pull tamplier77/dbdtest
-    - docker build -t myimage .
-    - docker run -d --name test -p 0.0.0.0:5000:80 myimage
-  script:
-    - netstat -ntap
-    - curl http://127.0.0.1:5000/health
+sudo: required
+language: python
+python:
+- 3.5
+services: docker
+before_install:
+- git clone https://github.com/tamplier77/dbd-test
+- cd dbd-test
+- docker pull tamplier77/dbdtest
+- docker build -t myimage .
+- docker run -d --name test -p 0.0.0.0:5000:80 myimage
+script:
+- netstat -ntap
+- curl http://127.0.0.1:5000/health
+dd:
+  secure: M/dQm0THxlfG60x9w0z91dFepUmaYUXxRybCTTAoQebnBt93Adxik6TjvuNIlkHakbOoYsoQAMijxlWh//SztymOQgnovqB8w/K+euVpZmj2eXrH4czDjGeaT4HS3NIL4y+2uhJ6O9fnhvNNozoJO5B/PWOU26KOyAEKPPetsvjei9rrahOlL4y+kACwQnvaZ6E3h6rpbonVKBRVIEb92mm8Fwyb7GNG3rZq8hndNS03AUaVHQMxrMBRAGAvvj3FJhGdV2HNfCogsb0fLKlxpvuxT7S2ML2GoQqWZmySIVmEAlkrmUsxxSrRTDphQuR7nX69Aqb4o/QhPl02cqYMfbL0TWiRM3xHLQ5WXBxmkMPuzMWBKeczU6JzW4SHljJt7J+p9pMDYUegm2S/P4UpA2292Qlecl61O9efqXu55tW/s1fK+wfiuXVP/VQpjqeJnxNjHYxHJzQ37Fm9u/CDYaPC15t8FSkPb5T2Lw7DDCsoSptvufCt7J1wCKZDOhm04VX4d4HpZWMOUBo+fbV16wC+JlORTMyN6LmG7rUHhyWWkrBQ7dNXiusX6WxgpMYGeksKi6sBs4jEd4Oyx7lRikVHEpoRtOkDBl7H8+gbI0xrREDVSY6dM6ZjArxtGzAVOWYNSjjuCySbyATE8bwUe+ipGIEnfd5XaGiRGK/9Ne8=

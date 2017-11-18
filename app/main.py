@@ -5,7 +5,7 @@ table_name='devops-challenge'
 region='us-east-1'
 code_name='thedoctor'
 
-conn = boto3.resource('dynamodb', region_name=region,aws_access_key_id=id,aws_secret_access_key=key)
+conn = boto3.resource('dynamodb', region_name=region)
 
 app = Flask(__name__)
 
@@ -26,5 +26,5 @@ def health():
 
 if __name__ == "__main__":
     # Only for debugging while developing
-    app.run(host='0.0.0.0', debug=True, port=80)
+    app.run(host='0.0.0.0', debug=True, port=5000)
 

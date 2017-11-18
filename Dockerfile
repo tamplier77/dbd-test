@@ -1,6 +1,7 @@
-FROM tiangolo/uwsgi-nginx-flask:python3.5
-
-RUN pip install boto3
+FROM python:3.5-alpine
+ADD . /app
+WORKDIR /app
+RUN pip install boto3 flask
 
 COPY ./app /app
-#COPY ./nginx.conf /etc/nginx/conf.d/
+CMD ["python", "main.py"]
