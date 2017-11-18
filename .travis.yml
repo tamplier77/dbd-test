@@ -5,7 +5,7 @@ before_install:
 - git clone https://github.com/tamplier77/dbd-test
 - cd dbd-test
 - docker build -t tamplier77/dbd-test .
-- docker run -d --name test -p 192.168.142.128:5000:80 tamplier77/dbd-test 
+- docker run -d --name test -p 0.0.0.0:5000:80 tamplier77/dbd-test 
 script:
 - python test.py
 after_script:
