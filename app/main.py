@@ -11,7 +11,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def main():
-    return "Looks OK."
+    return str("OK")
 
 @app.route("/secret")
 def secret():
