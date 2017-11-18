@@ -1,8 +1,6 @@
 from flask import Flask
 import boto3
 
-id='AKIAJXNKLPIFY7LYL74Q'
-key='5DqESA1u4XTUbq5tTfgyslzO3mvEGFp9UYODNs3y'
 table_name='devops-challenge'
 region='us-east-1'
 code_name='thedoctor'
@@ -24,7 +22,7 @@ def secret():
 
 @app.route("/health")
 def health():
-    return "Health"
+    return "{ status: healthy, container: <LINK_TO_HUB>, project: github.com/tamplier77/dbd-test }"
 
 if __name__ == "__main__":
     # Only for debugging while developing
