@@ -5,8 +5,8 @@ before_install:
 - git clone https://github.com/tamplier77/dbd-test
 - cd dbd-test
 - docker-compose up -d
-- docker-compose web netstat -nta
-- docker-compose web ps aux
+- docker-compose exec web netstat -nta
+- docker-compose exec web ps aux
 #script:
 #- curl http://localhost:5000/
 dd:
