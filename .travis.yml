@@ -6,7 +6,7 @@ services: docker
 before_install:
 - git clone https://github.com/tamplier77/dbd-test
 - cd dbd-test
-- docker-compose up
+- docker-compose up -d
 script:
 - curl http://[::1]:5000/health
 dd:
