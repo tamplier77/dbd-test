@@ -22,7 +22,7 @@ def secret():
 
 @app.route("/health")
 def health():
-    return "{ status: healthy, container: <LINK_TO_HUB>, project: github.com/tamplier77/dbd-test }"
+    return "{ status: healthy, container: https://hub.docker.com/r/tamplier77/challenge/, project: github.com/tamplier77/dbd-test }"
 
 if __name__ == "__main__":
     # Only for debugging while developing

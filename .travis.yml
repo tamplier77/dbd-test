@@ -1,11 +1,13 @@
+  sudo: required
   language: python
   python:
     - 3.5
-  install:
-    - sudo apt-get install docker.io git-sh
+  services: docker
+  before_install:
     - git clone https://github.com/tamplier77/dbd-test
     - cd dbd-test
     - docker pull tamplier77/dbdtest
     - docker build -t myimage .
-  script:
     - docker run -d --name test -p 0.0.0.0:5000:80 myimage
+  script:
+    - curl http://localhost:5000/health
