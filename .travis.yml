@@ -4,7 +4,6 @@ python:
 - 3.5
 services: docker
 before_install:
-- pip install urllib2
 - git clone https://github.com/tamplier77/dbd-test
 - cd dbd-test
 - docker-compose up -d
