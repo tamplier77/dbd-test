@@ -1,5 +1,4 @@
 version: '3'
-container_name: dbdtest
 services:
   web:
     build: .
